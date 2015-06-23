@@ -34,6 +34,42 @@
       .reveal .small{
         font-size:.7em;
       }
+
+      .reveal .w50{
+        width:50%;
+      }
+
+      .reveal .scale50{
+        transform: scale(0.5,0.5) translateY(-50%);
+        -webkit-transform: scale(0.5,0.5) translateY(-50%);
+      }
+
+      .reveal .scale80{
+        transform: scale(0.8,0.8);
+        -webkit-transform: scale(0.8,0.8);
+      }
+
+      .reveal .noborder{
+        border:none;
+      }
+
+      .reveal dl {
+        width: 100%;
+        overflow: hidden;
+        font-size:30px;
+        text-align:left;
+      }
+      .reveal dt {
+        float: left;
+        width: 20%;
+        font-weight: bold;
+        margin-bottom:30px;
+      }
+      .reveal dd {
+        float: left;
+        width: 80%;
+        margin-bottom:30px;
+      }
     </style>
 </head>
 
@@ -69,28 +105,72 @@
                 </p>
             </section>
 
+            <section>
+              <h3>Two Parts</h3>
+
+              <div class="left">
+                <h4>Domain Name</h4>
+                <code>ostusa.com</code>
+              </div>
+
+              <div class="right">
+                <h4>Server Space</h4>
+                <img src="images/request/server.png" class="scale80 noborder" />
+              </div>
+
+              <br class="clear"/>
+
+            </section>
+
+            <section>
+              <h3>Consider...</h3>
+              <p>Using a "smart" phone, how do you make phone calls these days?</p>
+
+              <div class="left w50">
+                <p>Find a contact <strong>by their name/picture</strong></p>
+                <img src="images/phone-contact.png" class="scale50" />
+              </div>
+
+              <column class="right w50">
+                <p>Tap person, phone dials <strong>their number</strong>.</p>
+                <img src="images/phone-dial.png" class="scale50" />
+              </column>
+
+              <br class="clear"/>
+            </section>
+
             <!-- How the Internet Works -->
             <section>
 
               <section>
                 <h3>The story of a web request</h3>
                 <p>What actually happens when you request a web page?</p>
+                <img src="images/request/client-server.png" class="scale80 noborder" />
               </section>
 
               <section>
-                <h3>Step 1: Enter the URL</h3>
+                <h3>Step 1: Enter a URL</h3>
+                <p>Includes a domain name</p>
+                <p class="small">(Find a contact)</p>
+                <img src="images/request/enter-url.png" />
               </section>
 
               <section>
                 <h3>Step 2: Browser Resolves Domain</h3>
+                <p class="small">(Phone translates contact to number)</p>
+                <img src="images/request/dns-to-ip.png" />
               </section>
 
               <section>
                 <h3>Step 3: Browser Requests Page from Web Server</h3>
+                <p class="small">(Call starts)</p>
+                <img src="images/request/request-page.png" />
               </section>
 
               <section>
                 <h3>Step 4: Browser starts rendering Page</h3>
+                <p class="small">(Conversation!)</p>
+                <img src="images/request/render.png" />
               </section>
 
             </section>
@@ -98,7 +178,7 @@
             <section>
               <h3>Terms</h3>
               <p>Some terms before we get too far.</p>
-              <ul>
+              <ul class="small">
                   <li>
                       <div class="subheading1">Browser</div>
                       <div>A program on a device intended to display web pages.</div>
@@ -125,25 +205,28 @@
 
             <!-- Where Hosting fits -->
             <section>
-              <h3>How Hosting Fits</h3>
+              <h3>Register a Domain Name</h3>
 
-              <p>Hosting is another way to refer to Step 3 - the web server.</p>
+              <p>that is, rent space in the internet's address book</p>
 
-              <p>To visit a site, browsers must be able to find and talk to a server that has the site's files.</p>
+              <br />
 
-              <p>When you establish hosting, you find a spot on a server on the internet for your website files.</p>
+              <ol>
+                <li>Pick a domain name</li>
+                <li>Register with a registrar</li>
+                <li>Point your domain name at your server</li>
+              </ol>
 
-              <p class="small">(And often, you point a domain name at that server.)</p>
+              <img src="images/domains/register.png" />
             </section>
 
-            <!-- Evaluating Hosts -->
-
-            <!-- Using Hosts -->
             <section>
-              <h3>Using Hosts</h3>
-              <p>Ok, so what does that look like?</p>
+              <h3>Find some Server Space</h3>
+              <p>Probably what one thinks about when planning hosting.</p>
 
-              <p>Register with a hosting company... you end up with remote management tools.</p>
+              <p>Can host through employers, but for our situation, host via hosting companies</p>
+
+              <p>Provided with remote management tools.</p>
 
               <ul>
                 <li>SSH/SFTP</li>
@@ -152,47 +235,107 @@
                 <li>Deployment hooks</li>
               </ul>
 
-              <p>All ways to get your files up to the chosen server.</p>
+              <p>All ways to get your web files up to the chosen server.</p>
             </section>
 
             <section>
-              <h3>Domain Name Registration</h3>
+              <h3>Using Hosts</h3>
+              <p>Ok, so what does that look like?</p>
+
+              <img src="images/cpanel/cpanel.png" />
             </section>
+
+            <section>
+              <h3>Using Hosts</h3>
+              <p>Ok, so what does that look like? <a href="http://bitcamp.ragingtulip.com/example.html" class="small">(example)</a></p>
+
+              <img src="images/cpanel/cpanel-files.png" />
+            </section>
+
+            <section>
+              <h3>Using Hosts</h3>
+              <p>Ok, so what does that look like?</p>
+
+              <img src="images/cloud/dashboard.png" />
+            </section>
+
+
+            <section>
+              <h3>Types of Hosting</h3>
+
+              <dl>
+                <dt>Shared:</dt>
+                <dd>You share a server with multiple customers.</dd>
+
+                <dt>VPS:</dt>
+                <dd>You have full administrator access to a slice of a server.</dd>
+
+                <dt>Dedicated:</dt>
+                <dd>You have full admin access to an entire server.</dd>
+
+                <dt>Cloud:</dt>
+                <dd>A modern variant of VPS hosting. Often used and paid by-the-hour.</dd>
+
+                <dt>Colocation:</dt>
+                <dd>You have full admin access to an entire server.</dd>
+
+                <dt>Manage:</dt>
+                <dd>Usually a luxury version of dedicated hosting.</dd>
+              </dl>
+            </section>
+
 
             <section>
               <h3>What to look for</h3>
 
               <p><a href="http://www.webhostingtalk.com">http://www.webhostingtalk.com</a></p>
+
+              <ol>
+                <li>uptime</li>
+                <li>cost</li>
+                <li>server software (Apache / nginx / IIS)</li>
+                <li>platform (PHP / .NET / NodeJS, etc)</li>
+                <li>no additional charges for additional domains</li>
+                <li>24/7 support from people who speak your language</li>
+                <li>scalable service, in case you get slashdotted</li>
+                <li>sane, automatic handling of subdomains</li>
+              </ol>
             </section>
 
             <!-- Recommendations -->
             <section>
-              <h3>Recommendataions</h3>
+              <h3>Some (Personal) Recommendataions</h3>
               <h4>Simple Shared Hosting</h4>
-              <ul>
-                <li>A Small Orange</li>
-                <li>Hostgator</li>
-                <li>Dreamhost</li>
+              <ul style="margin-top:10px;">
+                <li><a href="http://asmallorange.com">A Small Orange</a></li>
+                <li><a href="http://hostgator.com">Hostgator</a></li>
+                <li><a href="http://dreamhost.com">Dreamhost</a></li>
               </ul>
+              <br/><br/>
               <h4>VPS</h4>
-              <ul>
-                <li>Linode</li>
-                <li>Slicehost</li>
+              <ul style="margin-top:10px;">
+                <li><a href="http://linode.com">Linode</a></li>
               </ul>
+              <br/><br/>
               <h4>Platform As a Service</h4>
-              <ul>
-                <li>Heroku</li>
-                <li>Amazon Web Services</li>
-                <li>Azure</li>
+              <ul style="margin-top:10px;">
+                <li><a href="http://heroku.com">Heroku</a></li>
+                <li><a href="http://aws.amazon.com">Amazon Web Services</a></li>
+                <li><a href="http://azure.com">Azure</a></li>
               </ul>
             </section>
 
             <!-- Question-->
             <section>
                 <h2>Questions?</h2>
-                <div style="font-size: 1200%; height: 100%; margin-top: 30%" class="blue">
-                    ?
-                    <div class="clear"></div>
+                <div style="height: 100%; margin-top: 30%" class="blue">
+                  <span style="font-size: 1200%;">?</span>
+                  <br class="clear"/>
+                  <p>
+                    <a href="https://twitter.com/brnkrygs">https://twitter.com/brnkrygs</a><br />
+                    <a href="https://github.com/brnkrygs">https://github.com/brnkrygs</a><br />
+                    <a href="https://github.com/brnkrygs/presentation-bitcamp-hosting">https://github.com/brnkrygs/presentation-bitcamp-hosting</a>
+                  </p>
                 </div>
             </section>
 
@@ -200,8 +343,7 @@
         <footer>
             <div class="copyright">
                 Brian Krygsman ~ @brnkrygs ~
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
-              <img alt="Creative Commons License" style="border-width: 0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"> <img alt="Creative Commons License" style="border-width: 0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
             </div>
         </footer>
     </div>
